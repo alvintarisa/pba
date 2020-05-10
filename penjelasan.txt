@@ -1,3 +1,13 @@
+Alvin	
+
+	Ketika sistem pertama kali dibuka, sistem akan mengambil isi dari file yang bernama covid19corpus dengan tipe file '.txt'. Setelah itu semua huruf hasil dari pengambilan data tersebut akan diubah ke huruf kecil (lower case) lalu dimasukkan ke variabel raw. Selanjutnya sistem akan melakukan prosesi tokenisasi per kalimat dan per kata dan dimasukkan ke dalam variabel sent_tokent dan word_token. Selanjutnya sistem akan mengambil lemitasi yang sediakan oleh nltk. Selanjutnya menginisialisasi variabel remove_punct_dict yang berfungsi untuk menghilangkan tanda baca pada masukkan pengguna, setelah tahapan ini selesai sistem akan menjalankan method main dan siap untuk menerima pertanyaan dari pengguna. 
+
+	Ketika menjalankan method main, sistem akan mengkoneksikan ke telegram dan akan melakukan loop supaya semua pertanyaan dari pengguna dalam telegram dapat terjawab. Pada saat pengguna telah memberikan pertanyaan, sistem akan memanggil method echo yang nantinya akan membaca masukkan dari pengguna. Sistem akan menjawab pertanyaan dari pengguna dengan method response dimana sistem akan mengilangkan tanda baca dari inputan pengguna. Masukkan dari pengguna akan diproses dengan metode TF-IDF (Term Frequency-Inverse Document Frequency) yang mana nilai TF tersebut didapat dari banyaknya kata tersebut ada dibagi dengan banyaknya kata pada dokumen dan nilai IDF didapat dari 1+log(N/n) dimana N adalah banyaknya dokumen dan n adalah banyanya dokumen yang memiliki kata tersebut. Lalu nilai dari TI-IDF dari kata tersebut dan sebelumnya akan dicari nilai kesamaannya dengan Cosine Similarity, dimana nilai kesamaannya adalah dot product dari TI-IDF kata sebelumnya dan kata sekarang dibagi dengan nilai mutlak TI-IDF kata sebelumnya dengan nilai mutlak TI-IDF kata sekarang ((kataSebelum.KataSekarang)/(||kataSebelum||*||kataSekarang||)). Setalah itu sistem akan menyimpan data tersebut. Bila nilai tertinggi dari nilai kesamaan itu kurang dari 0.2, maka sistem akan menjawab "Maaf saya tidak mengenali kalimat anda", jika melebihi 0.2 sistem akan menjawab dengan kalimat yang memuat kata tersebut.
+
+
+
+Divanda
+
 awalnya akan membuka file covid19corpus.txt
 
 kemudian di read dan di dijadikan huruf kecil semua
